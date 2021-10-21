@@ -354,8 +354,6 @@ min_temp: 0
 max_temp: 265
 </code></pre>
         </td>
-    </tr>
-    <tr>
         <td>
 <pre><code>
 step_pin: P2.13
@@ -376,8 +374,6 @@ min_temp: 0
 max_temp: 260
 </code></pre>
         </td>
-    </tr>
-    <tr>
         <td>
 <pre><code>
 step_pin: P2.13
