@@ -77,7 +77,6 @@ mahl Q verlasst ihr nun KIAUH. Mit dem Kommando
   ls \~/klipper/out
 ```
 
-  -----------------------------------------------------------------------
 
 Solltet ihr auch die Datei „klipper.bin" sehen. Ihr könntet jetzt mit
 WinSCP die Datei herunterladen, in „firmware.bin" umbenennen und auf
@@ -328,10 +327,8 @@ Ich beschreibe hier das Vorgehen in Klipper 0.9.0, welches
 Als Basis für den block \[extruder\], mischen die muster Konfiguration
 des SV01 und der BIGTREETECH SKR V1.4
 
-+----------------------+----------------------+------------------------+
-| **Sovol Sv01**       | **BIGTREETECH SKR    |**Eigene**|
-|                      | V1.4**               |                        |
-+======================+======================+========================+
+| **Sovol Sv01**       | **BIGTREETECH SKR  V1.4**  |**Eigene**|
+|----------------------|----------------------|------------------------|
 | step_pin: PA4        | step_pin: P2.13      | step_pin: P2.13        |
 |                      |                      |                        |
 | dir_pin: !PA6        | dir_pin: !P0.11      | dir_pin: P0.11         |
@@ -370,7 +367,6 @@ des SV01 und der BIGTREETECH SKR V1.4
 |                      |                      | max_|
 |                      |                      | extrude_only_distance: |
 |                      |                      | 150                    |
-+----------------------+----------------------+------------------------+
 
 Einige Anpassungen an die Eigene Konfiguration können wir direkt
 einfügen. Beim „dir_pin" muss in meinem Fall die Negierung der Richtung
