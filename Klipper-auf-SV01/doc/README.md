@@ -1,5 +1,23 @@
 # Klipper Installations Anleitung
 
+- [Klipper Installations Anleitung](#klipper-installations-anleitung)
+- [Tools](#tools)
+- [Vorbereiten des Raspberry Pi](#vorbereiten-des-raspberry-pi)
+- [Installation über KIAUH](#installation-über-kiauh)
+- [Erzeugen der Firmware](#erzeugen-der-firmware)
+- [RaspberryPi usbmount einrichten](#raspberrypi-usbmount-einrichten)
+- [Präparieren von Octoprint](#präparieren-von-octoprint)
+- [Aufbereiten der Klipper Konfiguration](#aufbereiten-der-klipper-konfiguration)
+- [Prüfen der Schrittmotoren](#prüfen-der-schrittmotoren)
+- [Leveln des Bettes](#leveln-des-bettes)
+- [Z-Offset ermitteln](#z-offset-ermitteln)
+- [Z-Tilt justieren](#z-tilt-justieren)
+- [E-Steps justieren](#e-steps-justieren)
+- [Pressure Advance](#pressure-advance)
+  - [Bewegungsgeschwindigkeit:300](#bewegungsgeschwindigkeit300)
+
+# Tools
+
 Für die Klipper Installation empfehle ich euch ein paar Werkzeuge.
 
  |Name    |Beschreibung                       |Link                                   |
@@ -335,8 +353,7 @@ des SV01 und der BIGTREETECH SKR V1.4
     </tr>
     <tr>
         <td>
-<pre><code>
-step_pin: PA4
+<pre><code>step_pin: PA4
 dir_pin: !PA6
 enable_pin: !PA2
 microsteps: 16
@@ -351,12 +368,10 @@ pid_Kp: 31.147
 pid_Ki: 2.076
 pid_Kd: 116.803
 min_temp: 0
-max_temp: 265
-</code></pre>
+max_temp: 265</code></pre>
         </td>
         <td>
-<pre><code>
-step_pin: P2.13
+<pre><code>step_pin: P2.13
 dir_pin: !P0.11
 enable_pin: !P2.12
 microsteps: 16
@@ -371,12 +386,10 @@ pid_Kp: 22.2
 pid_Ki: 1.08
 pid_Kd: 114
 min_temp: 0
-max_temp: 260
-</code></pre>
+max_temp: 260</code></pre>
         </td>
         <td>
-<pre><code>
-step_pin: P2.13
+<pre><code>step_pin: P2.13
 dir_pin: P0.11
 enable_pin: !P2.12
 microsteps: 16
@@ -391,8 +404,7 @@ control: pid
 min_temp: 0
 max_temp: 300
 min_extrude_temp: 140
-max_extrude_only_distance: 150
-</code></pre>
+max_extrude_only_distance: 150</code></pre>
         </td>
     </tr>
 </table>
