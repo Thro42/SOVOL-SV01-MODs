@@ -4,32 +4,27 @@ Für die Klipper Installation empfehle ich euch ein paar Werkzeuge.
 
  |Name    |Beschreibung                       |Link                                   |
  |--------|-----------------------------------|---------------------------------------|
- |PuTTY   |Terminal-Programm, um auf euren    |<https://www.putty.org/> |
- |        |Raspberry zugreifen zu können.     |                                       |
- |--------|-----------------------------------|---------------------------------------|
+ |PuTTY   |Terminal-Programm, um auf euren <br /> Raspberry zugreifen zu können.
+ |<https://www.putty.org/> |
  |WinSCP  |WinSCP ist ein grafischer Open <br /> 
  Source SFTP und FTP Client für <br /> Windows. Den könnt ihr benutzen, um<br /> Dateien zwischen eurem PC und dem <br /> Raspberry auszutauschen<br /> | <https://winscp.net/eng/docs/lang:de>  |
- |--------|-----------------------------------|---------------------------------------|
 
 Ein paar nützliche Links möchte ich euch auch zeigen.
 
  |Beschreibung                      |Link |
  |----------------------------------|------------------------------------------------------------------|
  |Offizielle Klipper Webseite       |<https://www.klipper3d.org/> |
- |----------------------------------|------------------------------------------------------------------|
  |Klipper auf GitHub                |<https://github.com/KevinOConnor/klipper> |
- |----------------------------------|------------------------------------------------------------------|
- |Eine Klipper                      |<https://drucktipps3d.de/forum/topic/klipper-anleitung/> |
- |Installationsanaleitung           | |
- |----------------------------------|------------------------------------------------------------------|
- |KIAUH - Klipper Installation And  |<https://github.com/th33xitus/kiauh> |
- |Update Helper:                    | |
- |----------------------------------|------------------------------------------------------------------|
- |Raspberry Pi 4B - usbmount in     |<https://www.dgebhardt.de/raspi-projects/projects/usbmount.html> |
- |Raspbian Buster-Lite einrichten   | |
- |----------------------------------|------------------------------------------------------------------|
+ |Eine Klipper  <br /> Installationsanaleitung 
+ |<https://drucktipps3d.de/forum/topic/klipper-anleitung/> |
+
+ |KIAUH - Klipper Installation And  <br />
+ Update Helper:
+ |<https://github.com/th33xitus/kiauh> |
+
+ |Raspberry Pi 4B - usbmount in <br /> Raspbian Buster-Lite einrichten
+ |<https://www.dgebhardt.de/raspi-projects/projects/usbmount.html> |
  |OctoPrint                         |<https://octoprint.org/> |
- |----------------------------------|------------------------------------------------------------------|
 
 # Vorbereiten des Raspberry Pi
 
