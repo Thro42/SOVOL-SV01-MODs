@@ -335,6 +335,7 @@ des SV01 und der BIGTREETECH SKR V1.4
     </tr>
     <tr>
         <td>
+```
 step_pin: PA4
 dir_pin: !PA6
 enable_pin: !PA2
@@ -351,10 +352,12 @@ pid_Ki: 2.076
 pid_Kd: 116.803
 min_temp: 0
 max_temp: 265
+```
         </td>
     </tr>
     <tr>
         <td>
+```
 step_pin: P2.13
 dir_pin: !P0.11
 enable_pin: !P2.12
@@ -371,10 +374,12 @@ pid_Ki: 1.08
 pid_Kd: 114
 min_temp: 0
 max_temp: 260
+```
         </td>
     </tr>
     <tr>
         <td>
+```
 step_pin: P2.13
 dir_pin: P0.11
 enable_pin: !P2.12
@@ -391,6 +396,7 @@ min_temp: 0
 max_temp: 300
 min_extrude_temp: 140
 max_extrude_only_distance: 150
+```
         </td>
     </tr>
 </table>
