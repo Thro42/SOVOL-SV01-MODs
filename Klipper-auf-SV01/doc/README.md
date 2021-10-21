@@ -327,27 +327,89 @@ Ich beschreibe hier das Vorgehen in Klipper 0.9.0, welches
 Als Basis für den block \[extruder\], mischen die muster Konfiguration
 des SV01 und der BIGTREETECH SKR V1.4
 
+<table>
+    <tr>
+        <td> **Sovol Sv01** </td>
+        <td> **BIGTREETECH SKR  V1.4** </td>
+        <td> **Eigene** </td>
+    </tr>
+    <tr>
+        <td>
+step_pin: PA4
+dir_pin: !PA6
+enable_pin: !PA2
+microsteps: 16
+rotation_distance: 7.680
+nozzle_diameter: 0.400
+filament_diameter: 1.750
+heater_pin: PB4
+sensor_type: EPCOS 100K B57560G104F
+sensor_pin: PK5
+control: pid
+pid_Kp: 31.147
+pid_Ki: 2.076
+pid_Kd: 116.803
+min_temp: 0
+max_temp: 265
+        </td>
+    </tr>
+    <tr>
+        <td>
+step_pin: P2.13
+dir_pin: !P0.11
+enable_pin: !P2.12
+microsteps: 16
+rotation_distance: 33.500
+nozzle_diameter: 0.400
+filament_diameter: 1.750
+heater_pin: P2.7
+sensor_type: EPCOS 100K B57560G104F
+sensor_pin: P0.24
+control: pid
+pid_Kp: 22.2
+pid_Ki: 1.08
+pid_Kd: 114
+min_temp: 0
+max_temp: 260
+        </td>
+    </tr>
+    <tr>
+        <td>
+step_pin: P2.13
+dir_pin: P0.11
+enable_pin: !P2.12
+microsteps: 16
+rotation_distance: 7.680
+nozzle_diameter: 0.400
+filament_diameter: 1.750
+full_steps_per_rotation: 400
+heater_pin: P2.7
+sensor_type: ATC Semitec 104GT-2
+sensor_pin: P0.24
+control: pid
+min_temp: 0
+max_temp: 300
+min_extrude_temp: 140
+max_extrude_only_distance: 150
+        </td>
+    </tr>
+</table>
+
 | **Sovol Sv01**       | **BIGTREETECH SKR  V1.4**  |**Eigene**|
 |----------------------|----------------------|------------------------|
 | step_pin: PA4        | step_pin: P2.13      | step_pin: P2.13        |
-|                      |                      |                        |
 | dir_pin: !PA6        | dir_pin: !P0.11      | dir_pin: P0.11         |
-|                      |                      |                        |
 | enable_pin: !PA2     | enable_pin: !P2.12   | enable_pin: !P2.12     |
-|                      |                      |                        |
 | microsteps: 16       | microsteps: 16       | microsteps: 16         |
-|                      |                      |                        |
 | rotation_distance:   | rotation_distance:   | rotation_distance:     |
 | 7.680                | 33.500               | 7.680                  |
-|                      |                      |                        |
 | nozzle_diameter:     | nozzle_diameter:     | nozzle_diameter: 0.400 |
 | 0.400                | 0.400                |                        |
 |                      |                      | filament_diameter:     |
 | filament_diameter:   | filament_diameter:   | 1.750                  |
 | 1.750                | 1.750                |                        |
-|                      |                      | fu                     |
-| heater_pin: PB4      | heater_pin: P2.7     | ll_steps_per_rotation: |
-|                      |                      | 400                    |
+|                      |                      | full_steps_per_rotation:400|
+| heater_pin: PB4      | heater_pin: P2.7     |  |
 | sensor_type: EPCOS   | sensor_type: EPCOS   |                        |
 | 100K B57560G104F     | 100K B57560G104F     | heater_pin: P2.7       |
 |                      |                      |                        |
