@@ -74,6 +74,7 @@ aber nicht grösser als 32x28 Pixel sein. Hierzu ändert ihr die
 Bildeigenschaften wie folgt.
 
 ![](.//media/image9.png)
+
 Natürlich ist nicht viel Platz, um etwas komplexes zu zeichnen, aber
 seiht Creativ.
 
@@ -104,3 +105,4 @@ Auskommentieren.
 
 Eine Anleitung für das Boot-Logo gibt es auch hier:
 <https://selbstgedruckt.de/eigenes-logo-auf-dem-bootscreen-so-gehts/>
+Und das ganze wird auch in meinem Video auf [YouTube](https://youtu.be/tOzflUtHxl8) beschriben.

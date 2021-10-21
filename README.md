@@ -1,4 +1,4 @@
-![RT3D-Druck](.//media/image1.png){width="2.0833333333333335in" height="2.0833333333333335in"}
+![RT3D-Druck](.//media/image1.png)
 
 #SOVOL-SV01-MODs
 
