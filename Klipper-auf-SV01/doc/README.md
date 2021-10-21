@@ -4,8 +4,7 @@ Für die Klipper Installation empfehle ich euch ein paar Werkzeuge.
 
  |Name    |Beschreibung                       |Link                                   |
  |--------|-----------------------------------|---------------------------------------|
- |PuTTY   |Terminal-Programm, um auf euren <br /> Raspberry zugreifen zu können.
- |<https://www.putty.org/> |
+ |PuTTY   |Terminal-Programm, um auf euren <br /> Raspberry zugreifen zu können. |<https://www.putty.org/> |
  |WinSCP  |WinSCP ist ein grafischer Open <br />  Source SFTP und FTP Client für <br /> Windows. Den könnt ihr benutzen, um<br /> Dateien zwischen eurem PC und dem <br /> Raspberry auszutauschen<br /> | <https://winscp.net/eng/docs/lang:de>  |
 
 Ein paar nützliche Links möchte ich euch auch zeigen.
@@ -155,13 +154,12 @@ als erstes den Verweis auf die Konfigurationsdatei im OctoKlipper an.
 Dies muss nun auf die Datei „/home/pi/klipper_config/printer.cfg"
 verweisen.
 
-![](.//media/image5.png){width="5.484374453193351in"
-height="4.7075426509186356in"}
+![](.//media/image5.png)
 
 Zusätzlich stellen wir das Serialport in Octoprint auf „/tmp/printer"
 um.
 
-![](.//media/image6.png){width="6.3in" height="5.435416666666667in"}
+![](.//media/image6.png)
 
 Nach dem Speichern muss auch der Raspberry erneut durchgestartet werden.
 Anschließend kann die Klipper Konfiguration angepasst werden.
@@ -183,12 +181,11 @@ mit 4 in das Advance Menu. Dort geben wir 6 ein, um die MCU ID zu
 ermitteln. Wir bestätigen die nun erscheinende Frage. Danach sollte die
 MCU-ID auf dem Bildschirm zu sehen sein.
 
-![](.//media/image7.png){width="6.3in" height="3.886111111111111in"}
+![](.//media/image7.png)
 
 Diese müsst ihr Kopieren und in die printer.cfg eintragen.
 
-![](.//media/image8.png){width="6.106616360454943in"
-height="1.0486111111111112in"}
+![](.//media/image8.png)
 
 Ihr findet eine printer.cfg im gleichen Verzeichnis wie dieses Dokument.
 Alle Stellen, die ich anpassen musste, sind mit dem String „#ThRo Sovol
@@ -196,8 +193,7 @@ SV01" gekennzeichnet. Spätesten wenn ihr nun den Raspberry erneut
 durchgestartet, solltet ihr auf dem Display die folgenden Informationen
 sehen.
 
-![](.//media/image9.emf){width="4.131944444444445in"
-height="2.3342388451443568in"}
+![](.//media/image9.emf)
 
 # Prüfen der Schrittmotoren
 
@@ -211,7 +207,7 @@ Vorrausetzung ist das ihr den folgenden Abschnitt in der printer.cfg
 eingetragen habt.
 
 ```
-\[force_move\]\
+[force_move]
 enable_force_move: True
 ```
 
@@ -233,9 +229,9 @@ Z-Endschalter. Hierzu ändere ich die folgenden Zeilen in der
 printer.cfg, wie dargestellt um.
 
 ```
-\[stepper_z\]\
-endstop_pin: P1.27\
-position_endstop: 0.0\
+[stepper_z]
+endstop_pin: P1.27
+position_endstop: 0.0
 # endstop_pin: probe:z_virtual_endstop
 ```
 
@@ -244,10 +240,10 @@ Nun könnt ihr mit „G28" euern Drucker homen. Vorausgesetzt ihr haben den
 folgenden Block in eurer printer.cfg
 
 ```
-\[bed_screws\]\
-screw1: 47,52\
-screw2: 258,52\
-screw3: 258,228\
+[bed_screws]
+screw1: 47,52
+screw2: 258,52
+screw3: 258,228
 screw4: 47,228
 ```
 
@@ -265,9 +261,9 @@ Nun wollen wir den Z-Offset des BLTouch ermitteln. Hier ändere ich die
 folgenden Zeilen in der printer.cfg, wie dargestellt um.
 
 ```
-\[stepper_z\]\
-# endstop_pin: P1.27\
-# position_endstop: 0.0\
+[stepper_z]
+# endstop_pin: P1.27
+# position_endstop: 0.0
 endstop_pin: probe:z_virtual_endstop
 ```
 
@@ -288,23 +284,23 @@ natürlich auch unter Klipper. Hierzu müsst ihr den folgenden Block
 geplegt haben.
 
 ```
-\[z_tilt\]\
-z_positions:\
-320,125 \# stepper_z\
--42,125 \# stepper_z1\
-points:\
-10,125\
-240,125\
-speed: 100\
-horizontal_move_z: 10\
-retries: 5\
+[z_tilt]
+z_positions:
+320,125 # stepper_z
+-42,125 # stepper_z1
+points:
+10,125
+240,125
+speed: 100
+horizontal_move_z: 10
+retries: 5
 retry_tolerance: 0.05
 ```
 
 Um die Werte der "z_positions" besser zu verstehen habe ich das
 folgenden Bild angelegt.
 
-![](.//media/image10.png){width="6.3in" height="3.54375in"}
+![](.//media/image10.png)
 
 Die Werte geben die theoretische Position an, die die Nozzel anfahren
 müsste, um über der jeweiligen Z-Spindel zu stehen. Um die Justierung
@@ -312,11 +308,11 @@ vergleichbar mit Marlin durchführen zu können habe ich ein Makro für den
 G-Code G34 angelegt.
 
 ```
-\[gcode_macro G34\]\
-gcode:\
-{% if printer.toolhead.homed_axes != \"xyz\" %}\
-G28\
-{% endif %}\
+[gcode_macro G34]
+gcode:
+{% if printer.toolhead.homed_axes != "xyz" %}
+G28
+{% endif %}
 Z_TILT_ADJUST
 ```
 
