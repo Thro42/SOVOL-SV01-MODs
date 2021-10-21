@@ -10,17 +10,14 @@ jeder nachvollziehen kann.
 
 Nach dem Öffnen von Paint, stellen wir als erstes die Bildeigenschaften
 ein. Hierzu gehen wir im Menu Datei, auf den Punkt
-![](.//media/image1.png){width="0.9791743219597551in"
-height="0.35416885389326336in"}. In dem nun erscheinenden Dialog machen
+![](.//media/image1.png). In dem nun erscheinenden Dialog machen
 wir die angezeigten Einstellungen.
 
-![](.//media/image2.png){width="3.125022965879265in"
-height="3.2187740594925636in"}
+![](.//media/image2.png)
 
 Nachdem Schließen mit OK erscheint der eine Warnung.
 
-![](.//media/image3.png){width="3.8594028871391077in"
-height="1.9739730971128608in"}
+![](.//media/image3.png)
 
 Auch diese bestätigen wir mit OK. Anschließend zoomen wir erst einmal
 hinein.
@@ -28,17 +25,17 @@ hinein.
 Wenn ich eine Schrift einfügen mochtet empfehle ich „Century Gothic" in
 9pt Bold
 
-![](.//media/image4.png){width="6.3in" height="3.4875in"}
+![](.//media/image4.png)
 
 Ihr müsst beim Schreiben das Text-Feld anpassen, damit der Text
 hineinpasst. Sobald ich ein weiteres Objekt einfügt Ändert sich die
 Schrift und sie sieht verpixelt aus.
 
-![](.//media/image5.png){width="6.3in" height="3.4875in"}
+![](.//media/image5.png)
 
 Deshalb schreibt nicht zu klein und wählt euren Font mit bedacht. Beim
 Mahlen mit Formen sieht man gleich wie das Ergebnis aussehen wird.\
-![](.//media/image6.png){width="6.3in" height="3.4875in"}
+![](.//media/image6.png)
 
 Wenn ihr mit dem Bild fertig seid, speichert ihr es als JPG ab.
 
@@ -50,13 +47,13 @@ Text-Editor geöffnet. Als nächstes ruft ihr die Webseite
 <https://marlinfw.org/tools/u8glib/converter.html> auf. Hier macht ihr
 die folgenden Einstellungen.
 
-![](.//media/image7.png){width="6.3in" height="3.345138888888889in"}
+![](.//media/image7.png)
 
 Nun wählt ihr den Button „Datei auswählen" und wählt euer vorher
 gespeichertes Bild aus. Dann betätigt sollte sich die Webseite wie folgt
 ändern.
 
-![](.//media/image8.png){width="6.3in" height="6.490277777777778in"}
+![](.//media/image8.png)
 
 Ihr könnt nun den Text im hellblauem Feld Selektieren und mit „Strg +
 c", in die Zwischenablage übernehmen. Jetzt Wechsel ihr in den
@@ -64,7 +61,9 @@ Text-Editor mi der geöffneten Datei „\_Bootscreen.h". Hier fügt ihr mit
 „Strg+v" euer konvertiertes Bild hinein. Nun sichert ihr die Datei.
 Damit der Bootscreen auch angezeigt wird darf die Zeile
 
+```
 ##define SHOW_CUSTOM_BOOTSCREEN
+```
 
 In der Datei „Configuration.h" nicht auskommentiert sein.
 
@@ -74,31 +73,30 @@ Für das Status-Icon gehen wir sehr ähnlich vor. Hier sollte das Bild
 aber nicht grösser als 32x28 Pixel sein. Hierzu ändert ihr die
 Bildeigenschaften wie folgt.
 
-![](.//media/image9.png){width="3.125022965879265in"
-height="3.2187740594925636in"}
-
+![](.//media/image9.png)
 Natürlich ist nicht viel Platz, um etwas komplexes zu zeichnen, aber
 seiht Creativ.
 
-![](.//media/image10.png){width="5.630249343832021in"
-height="3.140647419072616in"}
+![](.//media/image10.png)
 
 Nachdem Speicher als JPG präparieren wir und zuerst die Datei
 „\_Statusscreen.h" mit leerem Inhalt. Diese Datei muss im gleiche
 Verzeichnis liegen wie die Datei „\_Bootscreen.h". Nun öffnen wir wieder
 die Webseite <https://marlinfw.org/tools/u8glib/converter.html> und
 machen die folgenden Einstellungen.\
-![](.//media/image11.png){width="6.3in" height="3.1909722222222223in"}
+![](.//media/image11.png)
 
 Anschließend „Datei auswählen" drücken., so dass es wie folgt aussieht.
 
-![](.//media/image12.png){width="6.3in" height="5.965277777777778in"}
+![](.//media/image12.png)
 
 Nun müssen wir wieder den Inhalt des hellblauen Felds kopieren und in
 der Datei „\_Statusscreen.h" einfügen. Damit auch das Status Icon
 gezeigt wird müssen wir in der Datei „Configuration.h" die Zeile
 
-\#define CUSTOM_STATUS_SCREEN_IMAGE
+```
+#define CUSTOM_STATUS_SCREEN_IMAGE
+```
 
 Auskommentieren.
 
