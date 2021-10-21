@@ -6,8 +6,7 @@ Für die Klipper Installation empfehle ich euch ein paar Werkzeuge.
  |--------|-----------------------------------|---------------------------------------|
  |PuTTY   |Terminal-Programm, um auf euren <br /> Raspberry zugreifen zu können.
  |<https://www.putty.org/> |
- |WinSCP  |WinSCP ist ein grafischer Open <br /> 
- Source SFTP und FTP Client für <br /> Windows. Den könnt ihr benutzen, um<br /> Dateien zwischen eurem PC und dem <br /> Raspberry auszutauschen<br /> | <https://winscp.net/eng/docs/lang:de>  |
+ |WinSCP  |WinSCP ist ein grafischer Open <br />  Source SFTP und FTP Client für <br /> Windows. Den könnt ihr benutzen, um<br /> Dateien zwischen eurem PC und dem <br /> Raspberry auszutauschen<br /> | <https://winscp.net/eng/docs/lang:de>  |
 
 Ein paar nützliche Links möchte ich euch auch zeigen.
 
@@ -15,15 +14,9 @@ Ein paar nützliche Links möchte ich euch auch zeigen.
  |----------------------------------|------------------------------------------------------------------|
  |Offizielle Klipper Webseite       |<https://www.klipper3d.org/> |
  |Klipper auf GitHub                |<https://github.com/KevinOConnor/klipper> |
- |Eine Klipper  <br /> Installationsanaleitung 
- |<https://drucktipps3d.de/forum/topic/klipper-anleitung/> |
-
- |KIAUH - Klipper Installation And  <br />
- Update Helper:
- |<https://github.com/th33xitus/kiauh> |
-
- |Raspberry Pi 4B - usbmount in <br /> Raspbian Buster-Lite einrichten
- |<https://www.dgebhardt.de/raspi-projects/projects/usbmount.html> |
+ |Eine Klipper  <br /> Installationsanaleitung |<https://drucktipps3d.de/forum/topic/klipper-anleitung/> |
+ |KIAUH - Klipper Installation And  <br /> Update Helper: |<https://github.com/th33xitus/kiauh> |
+ |Raspberry Pi 4B - usbmount in <br /> Raspbian Buster-Lite einrichten |<https://www.dgebhardt.de/raspi-projects/projects/usbmount.html> |
  |OctoPrint                         |<https://octoprint.org/> |
 
 # Vorbereiten des Raspberry Pi
@@ -53,13 +46,11 @@ KIAUH. Diese wird wie folgt installiert und gestartet.
 
 Nach dem Start von KIAUH erscheint das folgende Menu.
 
-![](.//media/image1.png){width="5.598999343832021in"
-height="3.4948173665791775in"}
+![](.//media/image1.png)
 
 Über die Eingabe von 1 kommt ihr in das Installations Menu.
 
-![](.//media/image2.png){width="5.598999343832021in"
-height="3.4948173665791775in"}
+![](.//media/image2.png)
 
 Mit einer erneuten Eingabe von 1, startet ihr die Installation von
 Klipper. Die nachfolgenden Eingabe Anforderungen, bestätigt ihr einfach
@@ -100,60 +91,42 @@ mit usbmount. Hierzu müsst ihr folgende schritte durchführen.
 
 Zuerst installiert ihr Usbmount.
 
-  -----------------------------------------------------------------------
-
-**sudo apt-get install usbmount**
-  -----------------------------------------------------------------------
-
-  -----------------------------------------------------------------------
+```
+sudo apt-get install usbmount
+```
 
 Damit ihr auch schreibend auf ein USB-Laufwerk zugreifen könnt muss die
 Konfigurationsdatei usbmount.conf ändern. Hierzu öffnen wir die Datei.
 
-  -----------------------------------------------------------------------
-
-**sudo nano /etc/usbmount/usbmount.conf**
-  -----------------------------------------------------------------------
-
-  -----------------------------------------------------------------------
+```
+sudo nano /etc/usbmount/usbmount.conf
+```
 
 Hier sucht ihr nach der Zeile
 
-  -----------------------------------------------------------------------
-
-**FS_MOUNTOPTIONS=\"\"**
-  -----------------------------------------------------------------------
-
-  -----------------------------------------------------------------------
+```
+FS_MOUNTOPTIONS=\"\"```
+```
 
 Und ändert sie wie folgt um.
 
-  -----------------------------------------------------------------------
-
-**FS_MOUNTOPTIONS=\"-fstype=vfat,gid=users,dmask=0007,fmask=0111\"**
-  -----------------------------------------------------------------------
-
-  -----------------------------------------------------------------------
+```
+FS_MOUNTOPTIONS=\"-fstype=vfat,gid=users,dmask=0007,fmask=0111\"
+```
 
 Anschliessend mit STRG + O speichern und mit STRG + X schliessen. Jetzt
 erfolgt noch eine Änderung im systemd-udevd.service. Hierzu öffnen wir
 die Datei ebenfalls mit nano.
 
-  -----------------------------------------------------------------------
-
-**sudo nano /lib/systemd/system/systemd-udevd.service**
-  -----------------------------------------------------------------------
-
-  -----------------------------------------------------------------------
+```
+sudo nano /lib/systemd/system/systemd-udevd.service
+```
 
 Nun ändern wir die Zeile „PrivateMounts=yes" wie folgt um.
 
-  -----------------------------------------------------------------------
-
-**PrivateMounts=no**
-  -----------------------------------------------------------------------
-
-  -----------------------------------------------------------------------
+```
+PrivateMounts=no
+```
 
 Anschließend wieder mit STRG + O speichern und mit STRG + X schließen.
 Nun startet ihr den Raspberry mit „sudo reboot" durch.
@@ -162,21 +135,15 @@ Nachdem ihr die Micro-SD Karte mittels eines USB-Adapter in den
 Raspberry gesteckt habt, solltet ihr wie folgt auf die Karte zugreifen
 können.
 
-  -----------------------------------------------------------------------
-
-**ls /media/usb/**
-  -----------------------------------------------------------------------
-
-  -----------------------------------------------------------------------
+```
+ls /media/usb/
+```
 
 Nun können wir die Firmware auf die Karte kopieren.
 
-  -----------------------------------------------------------------------
-
-**cp \~/klipper/out/klipper.bin /media/usb/firmware.bin**
-  -----------------------------------------------------------------------
-
-  -----------------------------------------------------------------------
+```
+cp \~/klipper/out/klipper.bin /media/usb/firmware.bin
+```
 
 Die so präpariert Karte, könnt ihr nun in euren Drucker einfügen.
 
@@ -206,13 +173,9 @@ Konfigurationsdatei nutzen. Zum einen gibt es im Verzeichnis
 /home/pi/klipper/config viel Konfigurationsdateien die ihr als Vorlage
 nutzen könnt. Mit dem befehl
 
-  -----------------------------------------------------------------------
-
-**sudo cp \~/klipper/config/generic-bigtreetech-skr-v1.4.cfg
-  \~/klipper_config/printer.cfg**
-  -----------------------------------------------------------------------
-
-  -----------------------------------------------------------------------
+```
+sudo cp \~/klipper/config/generic-bigtreetech-skr-v1.4.cfg \~/klipper_config/printer.cfg
+```
 
 Kopiert ihr z.B. eine Vorlage für ein SKR 1.4 Bord. Nun brauchen wir die
 ID des Serial-Port. Hierzu starten wir wieder KIAUH. Hier navigieren wir
@@ -247,8 +210,10 @@ stepper_z, stepper_z1 und extruder. Nun können wir die Richtung prüfen.
 Vorrausetzung ist das ihr den folgenden Abschnitt in der printer.cfg
 eingetragen habt.
 
+```
 \[force_move\]\
 enable_force_move: True
+```
 
 Dann könnt ihr den z.B. den X-Motor bewegen. Hierzu gebt ihr das
 Kommando
@@ -267,20 +232,24 @@ Um das Bett erst einmal, möglichst gerade zu bekommen, benutze ich den
 Z-Endschalter. Hierzu ändere ich die folgenden Zeilen in der
 printer.cfg, wie dargestellt um.
 
+```
 \[stepper_z\]\
 endstop_pin: P1.27\
 position_endstop: 0.0\
 # endstop_pin: probe:z_virtual_endstop
+```
 
 Hierdurch ist der BLTouch deaktivier und der Endschalter wird genutzt.
 Nun könnt ihr mit „G28" euern Drucker homen. Vorausgesetzt ihr haben den
 folgenden Block in eurer printer.cfg
 
+```
 \[bed_screws\]\
 screw1: 47,52\
 screw2: 258,52\
 screw3: 258,228\
 screw4: 47,228
+```
 
 Könnt ihr nun mit dem Kommando „BED_SCREWS_ADJUST" eure Schrauben
 Positionen anfahren und mit der Papiermethode justieren. Nach jeder
@@ -295,10 +264,12 @@ im Display zu „Setup -\> Calibration -\> Bed Leveling".
 Nun wollen wir den Z-Offset des BLTouch ermitteln. Hier ändere ich die
 folgenden Zeilen in der printer.cfg, wie dargestellt um.
 
+```
 \[stepper_z\]\
 # endstop_pin: P1.27\
 # position_endstop: 0.0\
 endstop_pin: probe:z_virtual_endstop
+```
 
 Hierdurch ist der BLTouch wieder aktiv. Wir starten nun die Kalibrierung
 in dem wir erst ein „G28" und dann ein „PROBE_CALIBRATE" Kommando
@@ -316,6 +287,7 @@ Was unter Marlin als „Z Steppers Auto-Alignment" bekannt ist gibt es
 natürlich auch unter Klipper. Hierzu müsst ihr den folgenden Block
 geplegt haben.
 
+```
 \[z_tilt\]\
 z_positions:\
 320,125 \# stepper_z\
@@ -327,6 +299,7 @@ speed: 100\
 horizontal_move_z: 10\
 retries: 5\
 retry_tolerance: 0.05
+```
 
 Um die Werte der "z_positions" besser zu verstehen habe ich das
 folgenden Bild angelegt.
@@ -338,12 +311,14 @@ müsste, um über der jeweiligen Z-Spindel zu stehen. Um die Justierung
 vergleichbar mit Marlin durchführen zu können habe ich ein Makro für den
 G-Code G34 angelegt.
 
+```
 \[gcode_macro G34\]\
 gcode:\
 {% if printer.toolhead.homed_axes != \"xyz\" %}\
 G28\
 {% endif %}\
 Z_TILT_ADJUST
+```
 
 Hierdurch wird vor dem Kommando „Z_TILT_ADJUST" ggf. ein „G28"
 ausgeführt.
