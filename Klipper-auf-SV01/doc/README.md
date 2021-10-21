@@ -2,20 +2,14 @@
 
 Für die Klipper Installation empfehle ich euch ein paar Werkzeuge.
 
- |Name     Beschreibung                        Link                                   |
+ |Name    |Beschreibung                       |Link                                   |
  |--------|-----------------------------------|---------------------------------------|
- |PuTTY   |Terminal-Programm, um auf euren    |<https://www.putty.org/>				  |
+ |PuTTY   |Terminal-Programm, um auf euren    |<https://www.putty.org/> |
  |        |Raspberry zugreifen zu können.     |                                       |
  |--------|-----------------------------------|---------------------------------------|
- |WinSCP  |WinSCP ist ein grafischer Open     |<https://winscp.net/eng/docs/lang:de>  |
- |        |Source SFTP und FTP Client für     |                                       |
- |        |Windows. Den könnt ihr benutzen, um|                                       |
- |        |Dateien zwischen eurem PC und dem  |                                       |
- |        |Raspberry auszutauschen            |                                       |
+ |WinSCP  |WinSCP ist ein grafischer Open <br /> 
+ Source SFTP und FTP Client für <br /> Windows. Den könnt ihr benutzen, um<br /> Dateien zwischen eurem PC und dem <br /> Raspberry auszutauschen<br /> | <https://winscp.net/eng/docs/lang:de>  |
  |--------|-----------------------------------|---------------------------------------|
-
-                                               
-  ------------------------------------------------------------------------------------
 
 Ein paar nützliche Links möchte ich euch auch zeigen.
 
@@ -36,9 +30,8 @@ Ein paar nützliche Links möchte ich euch auch zeigen.
  |----------------------------------|------------------------------------------------------------------|
  |OctoPrint                         |<https://octoprint.org/> |
  |----------------------------------|------------------------------------------------------------------|
-                                     
 
-# Vorbereiten des Raspberry Pi. 
+# Vorbereiten des Raspberry Pi
 
 Diese Anleitung, geht davon aus das ihr schon OctoPrint in Einsatz habt.
 Und auf dem Drucker Marlin läuft. Bevor ihr Klipper installiert solltet
@@ -113,7 +106,8 @@ mit usbmount. Hierzu müsst ihr folgende schritte durchführen.
 Zuerst installiert ihr Usbmount.
 
   -----------------------------------------------------------------------
-  **sudo apt-get install usbmount**
+
+**sudo apt-get install usbmount**
   -----------------------------------------------------------------------
 
   -----------------------------------------------------------------------
@@ -122,7 +116,8 @@ Damit ihr auch schreibend auf ein USB-Laufwerk zugreifen könnt muss die
 Konfigurationsdatei usbmount.conf ändern. Hierzu öffnen wir die Datei.
 
   -----------------------------------------------------------------------
-  **sudo nano /etc/usbmount/usbmount.conf**
+
+**sudo nano /etc/usbmount/usbmount.conf**
   -----------------------------------------------------------------------
 
   -----------------------------------------------------------------------
@@ -130,7 +125,8 @@ Konfigurationsdatei usbmount.conf ändern. Hierzu öffnen wir die Datei.
 Hier sucht ihr nach der Zeile
 
   -----------------------------------------------------------------------
-  **FS_MOUNTOPTIONS=\"\"**
+
+**FS_MOUNTOPTIONS=\"\"**
   -----------------------------------------------------------------------
 
   -----------------------------------------------------------------------
@@ -138,7 +134,8 @@ Hier sucht ihr nach der Zeile
 Und ändert sie wie folgt um.
 
   -----------------------------------------------------------------------
-  **FS_MOUNTOPTIONS=\"-fstype=vfat,gid=users,dmask=0007,fmask=0111\"**
+
+**FS_MOUNTOPTIONS=\"-fstype=vfat,gid=users,dmask=0007,fmask=0111\"**
   -----------------------------------------------------------------------
 
   -----------------------------------------------------------------------
@@ -148,7 +145,8 @@ erfolgt noch eine Änderung im systemd-udevd.service. Hierzu öffnen wir
 die Datei ebenfalls mit nano.
 
   -----------------------------------------------------------------------
-  **sudo nano /lib/systemd/system/systemd-udevd.service**
+
+**sudo nano /lib/systemd/system/systemd-udevd.service**
   -----------------------------------------------------------------------
 
   -----------------------------------------------------------------------
@@ -156,7 +154,8 @@ die Datei ebenfalls mit nano.
 Nun ändern wir die Zeile „PrivateMounts=yes" wie folgt um.
 
   -----------------------------------------------------------------------
-  **PrivateMounts=no**
+
+**PrivateMounts=no**
   -----------------------------------------------------------------------
 
   -----------------------------------------------------------------------
@@ -169,7 +168,8 @@ Raspberry gesteckt habt, solltet ihr wie folgt auf die Karte zugreifen
 können.
 
   -----------------------------------------------------------------------
-  **ls /media/usb/**
+
+**ls /media/usb/**
   -----------------------------------------------------------------------
 
   -----------------------------------------------------------------------
@@ -177,7 +177,8 @@ können.
 Nun können wir die Firmware auf die Karte kopieren.
 
   -----------------------------------------------------------------------
-  **cp \~/klipper/out/klipper.bin /media/usb/firmware.bin**
+
+**cp \~/klipper/out/klipper.bin /media/usb/firmware.bin**
   -----------------------------------------------------------------------
 
   -----------------------------------------------------------------------
@@ -211,7 +212,8 @@ Konfigurationsdatei nutzen. Zum einen gibt es im Verzeichnis
 nutzen könnt. Mit dem befehl
 
   -----------------------------------------------------------------------
-  **sudo cp \~/klipper/config/generic-bigtreetech-skr-v1.4.cfg
+
+**sudo cp \~/klipper/config/generic-bigtreetech-skr-v1.4.cfg
   \~/klipper_config/printer.cfg**
   -----------------------------------------------------------------------
 
@@ -264,7 +266,7 @@ Zeile „dir_pin: !P2.6" der printer.cfg ändern. Ein „!" bedeutet das der
 Pin negiert wird. Bei meinem Drucker musste ich dies für X und Y
 Negieren für Z und den Extruder nicht.
 
-#  Leveln des Bettes
+# Leveln des Bettes
 
 Um das Bett erst einmal, möglichst gerade zu bekommen, benutze ich den
 Z-Endschalter. Hierzu ändere ich die folgenden Zeilen in der
@@ -273,7 +275,7 @@ printer.cfg, wie dargestellt um.
 \[stepper_z\]\
 endstop_pin: P1.27\
 position_endstop: 0.0\
-#endstop_pin: probe:z_virtual_endstop
+# endstop_pin: probe:z_virtual_endstop
 
 Hierdurch ist der BLTouch deaktivier und der Endschalter wird genutzt.
 Nun könnt ihr mit „G28" euern Drucker homen. Vorausgesetzt ihr haben den
@@ -299,8 +301,8 @@ Nun wollen wir den Z-Offset des BLTouch ermitteln. Hier ändere ich die
 folgenden Zeilen in der printer.cfg, wie dargestellt um.
 
 \[stepper_z\]\
-#endstop_pin: P1.27\
-#position_endstop: 0.0\
+# endstop_pin: P1.27\
+# position_endstop: 0.0\
 endstop_pin: probe:z_virtual_endstop
 
 Hierdurch ist der BLTouch wieder aktiv. Wir starten nun die Kalibrierung
@@ -361,7 +363,7 @@ Als Basis für den block \[extruder\], mischen die muster Konfiguration
 des SV01 und der BIGTREETECH SKR V1.4
 
 +----------------------+----------------------+------------------------+
-| **Sovol Sv01**       | **BIGTREETECH SKR    | **Eigene**             |
+| **Sovol Sv01**       | **BIGTREETECH SKR    |**Eigene**|
 |                      | V1.4**               |                        |
 +======================+======================+========================+
 | step_pin: PA4        | step_pin: P2.13      | step_pin: P2.13        |
@@ -399,7 +401,7 @@ des SV01 und der BIGTREETECH SKR V1.4
 | min_temp: 0          | min_temp: 0          |                        |
 |                      |                      | min_extrude_temp: 140  |
 | max_temp: 265        | max_temp: 260        |                        |
-|                      |                      | max_                   |
+|                      |                      | max_|
 |                      |                      | extrude_only_distance: |
 |                      |                      | 150                    |
 +----------------------+----------------------+------------------------+
@@ -425,16 +427,16 @@ beginnen mit der Prozedur. Oder wir entfernen die Nozzel um das Filament
 kalt zu extrudieren. Dann müssen wir den Block \[extruder\] um die Zeile
 „min_extrude_temp: 0" erweitern oder anpassen. G1 Z100
 
-1.  Alten Wert von „rotation_distance" in Formel eintragen
+1. Alten Wert von „rotation_distance" in Formel eintragen
 
-2.  Relative Extrudieren einstellen mit M83
+2. Relative Extrudieren einstellen mit M83
 
-3.  Als nächstes markieren wir uns, oberhalb des Extruders 120mm
+3. Als nächstes markieren wir uns, oberhalb des Extruders 120mm
     entfernt, das Filament.
 
-4.  Nun extrudieren wir 100mm mit G1 E100 F100
+4. Nun extrudieren wir 100mm mit G1 E100 F100
 
-5.  Restlänge Messen. Und in Formel eintragen
+5. Restlänge Messen. Und in Formel eintragen
 
 Die Formel sieht vereinfacht so aus.
 
@@ -451,23 +453,23 @@ Diese Datei laden wir in unseren Slicer z.B. Cura. Folgende
 Einstellungen sollten wir anpassen.
 
   -----------------------------------------------------------------------
-  Parameter                           
+  Parameter
   ----------------------------------- -----------------------------------
   Schichtdicke: 0.3                   \~75% des Nozzel Durchmessers
 
-  Fülldichte: 0                       
+  Fülldichte: 0
 
-  Druckgeschwindigkeit: 100           
+  Druckgeschwindigkeit: 100
 
-  Füllgeschwindigkeit: 100            
+  Füllgeschwindigkeit: 100
 
-  Wandgeschwindigkeit: 100            
+  Wandgeschwindigkeit: 100
 
-  Geschwindigkeit Außenwand:100       
+  Geschwindigkeit Außenwand:100
 
-  Geschwindigkeit Innenwand:100       
+  Geschwindigkeit Innenwand:100
 
-  Bewegungsgeschwindigkeit:300        
+Bewegungsgeschwindigkeit:300
   -----------------------------------------------------------------------
 
 Mit dieser Einstellung Slicen wir das und sicher den GCode. Dieser kann
