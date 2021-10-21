@@ -335,7 +335,7 @@ des SV01 und der BIGTREETECH SKR V1.4
     </tr>
     <tr>
         <td>
-```
+<pre><code>
 step_pin: PA4
 dir_pin: !PA6
 enable_pin: !PA2
@@ -352,12 +352,12 @@ pid_Ki: 2.076
 pid_Kd: 116.803
 min_temp: 0
 max_temp: 265
-```
+</code></pre>
         </td>
     </tr>
     <tr>
         <td>
-```
+<pre><code>
 step_pin: P2.13
 dir_pin: !P0.11
 enable_pin: !P2.12
@@ -374,12 +374,12 @@ pid_Ki: 1.08
 pid_Kd: 114
 min_temp: 0
 max_temp: 260
-```
+</code></pre>
         </td>
     </tr>
     <tr>
         <td>
-```
+<pre><code>
 step_pin: P2.13
 dir_pin: P0.11
 enable_pin: !P2.12
@@ -396,45 +396,10 @@ min_temp: 0
 max_temp: 300
 min_extrude_temp: 140
 max_extrude_only_distance: 150
-```
+</code></pre>
         </td>
     </tr>
 </table>
-
-| **Sovol Sv01**       | **BIGTREETECH SKR  V1.4**  |**Eigene**|
-|----------------------|----------------------|------------------------|
-| step_pin: PA4        | step_pin: P2.13      | step_pin: P2.13        |
-| dir_pin: !PA6        | dir_pin: !P0.11      | dir_pin: P0.11         |
-| enable_pin: !PA2     | enable_pin: !P2.12   | enable_pin: !P2.12     |
-| microsteps: 16       | microsteps: 16       | microsteps: 16         |
-| rotation_distance:   | rotation_distance:   | rotation_distance:     |
-| 7.680                | 33.500               | 7.680                  |
-| nozzle_diameter:     | nozzle_diameter:     | nozzle_diameter: 0.400 |
-| 0.400                | 0.400                |                        |
-|                      |                      | filament_diameter:     |
-| filament_diameter:   | filament_diameter:   | 1.750                  |
-| 1.750                | 1.750                |                        |
-|                      |                      | full_steps_per_rotation:400|
-| heater_pin: PB4      | heater_pin: P2.7     |  |
-| sensor_type: EPCOS   | sensor_type: EPCOS   |                        |
-| 100K B57560G104F     | 100K B57560G104F     | heater_pin: P2.7       |
-|                      |                      |                        |
-| sensor_pin: PK5      | sensor_pin: P0.24    | sensor_type: ATC       |
-|                      |                      | Semitec 104GT-2        |
-| control: pid         | control: pid         |                        |
-|                      |                      | sensor_pin: P0.24      |
-| pid_Kp: 31.147       | pid_Kp: 22.2         |                        |
-|                      |                      | control: pid           |
-| pid_Ki: 2.076        | pid_Ki: 1.08         |                        |
-|                      |                      | min_temp: 0            |
-| pid_Kd: 116.803      | pid_Kd: 114          |                        |
-|                      |                      | max_temp: 300          |
-| min_temp: 0          | min_temp: 0          |                        |
-|                      |                      | min_extrude_temp: 140  |
-| max_temp: 265        | max_temp: 260        |                        |
-|                      |                      | max_|
-|                      |                      | extrude_only_distance: |
-|                      |                      | 150                    |
 
 Einige Anpassungen an die Eigene Konfiguration können wir direkt
 einfügen. Beim „dir_pin" muss in meinem Fall die Negierung der Richtung
