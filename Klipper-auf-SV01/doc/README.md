@@ -2,17 +2,18 @@
 
 Für die Klipper Installation empfehle ich euch ein paar Werkzeuge.
 
-  ------------------------------------------------------------------------------------
-  Name     Beschreibung                        Link
-  -------- ----------------------------------- ---------------------------------------
-  PuTTY    Terminal-Programm, um auf euren     <https://www.putty.org/>
-           Raspberry zugreifen zu können.      
-
-  WinSCP   WinSCP ist ein grafischer Open      <https://winscp.net/eng/docs/lang:de>
-           Source SFTP und FTP Client für      
-           Windows. Den könnt ihr benutzen, um 
-           Dateien zwischen eurem PC und dem   
-           Raspberry auszutauschen             
+ |--------|-----------------------------------|---------------------------------------|
+  Name     Beschreibung                        Link                                   |
+ |--------|-----------------------------------|---------------------------------------|
+ |PuTTY   |Terminal-Programm, um auf euren    |<https://www.putty.org/>				  |
+ |        |Raspberry zugreifen zu können.     |                                       |
+ |--------|-----------------------------------|---------------------------------------|
+ |WinSCP  |WinSCP ist ein grafischer Open     |<https://winscp.net/eng/docs/lang:de>  |
+ |        |Source SFTP und FTP Client für     |                                       |
+ |        |Windows. Den könnt ihr benutzen, um|                                       |
+ |        |Dateien zwischen eurem PC und dem  |                                       |
+ |        |Raspberry auszutauschen            |                                       |
+ |--------|-----------------------------------|---------------------------------------|
 
                                                
   ------------------------------------------------------------------------------------
@@ -47,12 +48,10 @@ Und auf dem Drucker Marlin läuft. Bevor ihr Klipper installiert solltet
 ihr den Raspberry auf den aktuellen Stand bringe. Hierzu verbindet ihr
 euch mit PuTTY zu eurem Raspberry und führt die folgenden Befehle aus.
 
-+-----------------------------------------------------------------------+
-| **sudo apt-get update**                                               |
-|                                                                       |
-| **sudo apt full-upgrade**                                             |
-+=======================================================================+
-+-----------------------------------------------------------------------+
+```
+ sudo apt-get update
+ sudo apt full-upgrade
+```
 
 Auch OctoPrint solltet ihr ggf. auf den neusten Stand bringen.
 
@@ -61,19 +60,11 @@ Auch OctoPrint solltet ihr ggf. auf den neusten Stand bringen.
 Für die Installation von Klipper nutzen wir eine Scriptsamlung namens
 KIAUH. Diese wird wie folgt installiert und gestartet.
 
-+-----------------------------------------------------------------------+
-| **cd \~**                                                             |
-|                                                                       |
-| **git clone https://github.com/th33xitus/kiauh.git**                  |
-|                                                                       |
-| **./kiauh/kiauh.sh**                                                  |
-+=======================================================================+
-|                                                                       |
-+-----------------------------------------------------------------------+
-|                                                                       |
-+-----------------------------------------------------------------------+
-|                                                                       |
-+-----------------------------------------------------------------------+
+```
+  cd \~**                                                             
+  git clone https://github.com/th33xitus/kiauh.git**                                                                                      
+  ./kiauh/kiauh.sh**                                                  
+```
 
 Nach dem Start von KIAUH erscheint das folgende Menu.
 
