@@ -2,8 +2,7 @@
 
 Für die Klipper Installation empfehle ich euch ein paar Werkzeuge.
 
- |--------|-----------------------------------|---------------------------------------|
-  Name     Beschreibung                        Link                                   |
+ |Name     Beschreibung                        Link                                   |
  |--------|-----------------------------------|---------------------------------------|
  |PuTTY   |Terminal-Programm, um auf euren    |<https://www.putty.org/>				  |
  |        |Raspberry zugreifen zu können.     |                                       |
@@ -20,26 +19,24 @@ Für die Klipper Installation empfehle ich euch ein paar Werkzeuge.
 
 Ein paar nützliche Links möchte ich euch auch zeigen.
 
-  -----------------------------------------------------------------------------------------------------
-  Beschreibung                       Link
-  ---------------------------------- ------------------------------------------------------------------
-  Offizielle Klipper Webseite        <https://www.klipper3d.org/>
-
-  Klipper auf GitHub                 <https://github.com/KevinOConnor/klipper>
-
-  Eine Klipper                       <https://drucktipps3d.de/forum/topic/klipper-anleitung/>
-  Installationsanaleitung            
-
-  KIAUH - Klipper Installation And   <https://github.com/th33xitus/kiauh>
-  Update Helper:                     
-
-  Raspberry Pi 4B - usbmount in      <https://www.dgebhardt.de/raspi-projects/projects/usbmount.html>
-  Raspbian Buster-Lite einrichten    
-
-  OctoPrint                          <https://octoprint.org/>
-
+ |Beschreibung                      |Link |
+ |----------------------------------|------------------------------------------------------------------|
+ |Offizielle Klipper Webseite       |<https://www.klipper3d.org/> |
+ |----------------------------------|------------------------------------------------------------------|
+ |Klipper auf GitHub                |<https://github.com/KevinOConnor/klipper> |
+ |----------------------------------|------------------------------------------------------------------|
+ |Eine Klipper                      |<https://drucktipps3d.de/forum/topic/klipper-anleitung/> |
+ |Installationsanaleitung           | |
+ |----------------------------------|------------------------------------------------------------------|
+ |KIAUH - Klipper Installation And  |<https://github.com/th33xitus/kiauh> |
+ |Update Helper:                    | |
+ |----------------------------------|------------------------------------------------------------------|
+ |Raspberry Pi 4B - usbmount in     |<https://www.dgebhardt.de/raspi-projects/projects/usbmount.html> |
+ |Raspbian Buster-Lite einrichten   | |
+ |----------------------------------|------------------------------------------------------------------|
+ |OctoPrint                         |<https://octoprint.org/> |
+ |----------------------------------|------------------------------------------------------------------|
                                      
-  -----------------------------------------------------------------------------------------------------
 
 # Vorbereiten des Raspberry Pi. 
 
@@ -61,9 +58,9 @@ Für die Installation von Klipper nutzen wir eine Scriptsamlung namens
 KIAUH. Diese wird wie folgt installiert und gestartet.
 
 ```
-  cd \~**                                                             
-  git clone https://github.com/th33xitus/kiauh.git**                                                                                      
-  ./kiauh/kiauh.sh**                                                  
+  cd \~                    
+  git clone https://github.com/th33xitus/kiauh.git
+  ./kiauh/kiauh.sh
 ```
 
 Nach dem Start von KIAUH erscheint das folgende Menu.
@@ -85,12 +82,12 @@ das Startmenu.
 
 Vom Hauptmenü aus navigier ihr mit 4 in das Advance Menu.
 
-![](.//media/image3.png){width="6.3in" height="3.886111111111111in"}
+![](.//media/image3.png)
 
 Mit der Eingabe von 3 starten wir die Erzeugung der Firmware. Nun
 startet der „Klipper Firmware Configuration".
 
-![](.//media/image4.png){width="6.3in" height="3.886111111111111in"}
+![](.//media/image4.png)
 
 Für das SKR 1.4 Turbo wählt ihr als Micro-controller „LPC176x" aus.
 Zusätzlich wählt ihr für das Torbo Bord das „Processor model", „120 MHz"
@@ -98,9 +95,9 @@ aus. Mit Q verlassen wir den Konfigurator und die Firmware wird
 generiert. Diese wir dann im Verzeichnis /home/pi/klipper/out. Mit 2
 mahl Q verlasst ihr nun KIAUH. Mit dem Kommando
 
-  -----------------------------------------------------------------------
-  **ls \~/klipper/out**
-  -----------------------------------------------------------------------
+```
+  ls \~/klipper/out
+```
 
   -----------------------------------------------------------------------
 
