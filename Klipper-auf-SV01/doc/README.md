@@ -347,9 +347,9 @@ des SV01 und der BIGTREETECH SKR V1.4
 
 <table>
     <tr>
-        <td> **Sovol Sv01** </td>
-        <td> **BIGTREETECH SKR  V1.4** </td>
-        <td> **Eigene** </td>
+        <td> <B>Sovol Sv01</B> </td>
+        <td> <B>BIGTREETECH SKR  V1.4</B> </td>
+        <td> <B>Eigene</B> </td>
     </tr>
     <tr>
         <td>
